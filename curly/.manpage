@@ -1,0 +1,23 @@
+Curly V0.3
+> An elegant Curl wrapper for managing requests
+
+COMMANDS:
+# SET
+  setHost [host]               : stores the HTTP host for easy repeat calls
+  setPath [path]               : stores a path for easy repeat calls
+  setPayload                   : opens payload json in edit mode
+  setHeaders                   : opens headers list in edit mode
+
+# SHOW
+  showRequest (request)        : displays full request details
+  showLast                     : opens last request and response in edit mode
+
+# REQUEST HANDLING
+  saveRequest (name)                  : saves request with the specified name or timestamp
+  loadRequest history/[date]/[name]   : loads specified request from history
+
+# HTTP OPERATIONS
+  get (path)                   : http GET call with specified headers to the host/path or stored host/path
+  post (path)                  : http POST with payload and headers to the host/path or stored host/path
+  put (path)                   : http PUT with payload and headers to the host/path or stored host/path
+  delete (path)                : http DELETE call with headers to the host/path or stored host/path
