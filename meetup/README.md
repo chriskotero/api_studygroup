@@ -27,7 +27,7 @@ When you add these into the parameters section on Postman, you will see them add
 
 # Easy Script
 
-Inside our Meetup class is this awesome function.  It asks the same thing that we asked for in our Postman query.
+Next let's take a look at the [Easy Script](https://github.com/wwcoderdu/api_studygroup/tree/meetup-revisions/meetup/easy_script) directory. Inside our Meetup class is this awesome function.  It asks the same thing that we asked for in our Postman query.
 
     public function getEvents(array $parameters = array()) {
         return $this->get('/2/events', $parameters)->results;
@@ -45,7 +45,6 @@ Our `next-meetup.php` script accesses this meetup class and helps us make the qu
     ));
 
 And we should see this lovely data:
-<collapsed-data>
 
     {
         "results": [
@@ -232,12 +231,31 @@ And we should see this lovely data:
     }
 
 
-</collapsed-data>
 
 # Test it by running a local php webserver
 
-Execute this command in the project
+If you have [PHP installed](http://php.net/manual/en/install.php) you can execute this command in the `easy_script` directory
 
 >  php -S localhost:8000
 
-Then open [this link](http://localhost:8000/next-meetup.php?text=wwcrd)
+Then open [this link](http://localhost:8000/next-meetup.php?text=wwcrd) to view the next 1 meetup we are hosting.
+
+# Future steps
+
+ - host this script on a website, and call it using a #Slack `slash command`
+
+    - Our [WWCode slack group](https://wwcode.slack.com/)
+    - join `#raleigh-durham` channel to find us
+    - execute the `/nextmeetuprdu` slash command to call the script
+
+ - check out the NextMeetup Command
+
+    - go to the `meetup` directory at the command-line
+    - use should have php installed
+    - you should use `composer install` to install the packages we need
+    - use this command
+        > php src/application.php next-meetup wwcrd
+
+        or
+
+        > php src/application.php next-meetup wwcrd 4
