@@ -27,7 +27,11 @@ When you add these into the parameters section on Postman, you will see them add
 
 # Easy Script
 
-Next let's take a look at the [Easy Script](https://github.com/wwcoderdu/api_studygroup/tree/meetup-revisions/meetup/easy_script) directory. Inside our Meetup class is this awesome function.  It asks the same thing that we asked for in our Postman query.
+[Meetup Libraries for many, many languages](https://github.com/meetup/api/blob/master/clients.md)
+
+Next let's take a look at the [Easy Script](https://github.com/wwcoderdu/api_studygroup/tree/meetup-revisions/meetup/easy_script) directory. I pulled one of the PHP classes from here to use in my script.  
+
+Inside this Meetup class is this awesome function.  It asks the same thing that we asked for in our Postman query.
 
     public function getEvents(array $parameters = array()) {
         return $this->get('/2/events', $parameters)->results;
