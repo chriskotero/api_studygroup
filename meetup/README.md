@@ -6,7 +6,7 @@
 and generate a key.  **Protect this key FOREVER.**  
 
 How will we use it:
-- Postman query to look up information
+- [Postman](https://www.getpostman.com/apps) or [Insomnia](https://insomnia.rest/)query to look up information
 - Add it to your config.php and use it in the script
 - host that script on a web site and slack slash command
 
@@ -14,19 +14,33 @@ How will we use it:
 
 ** remember that key **
 
-query:
+add your url:
 
-    /2/events
+    https://api.meetup.com/2/events
 
 parameters:
 
-    ['group_urlname' => $group]
+    'key' => your secret key
+    'group_urlname' => Women-Who-Code-Raleigh-Durham
         
+When you add these into the parameters section on Postman, you will see them added onto the URL.  Save this if you want to remember it later.
+
 # Let's get events in the code
+
+Inside our Meetup class is this awesome function.  It asks the same thing that we asked for in our Postman query.
 
     public function getEvents(array $parameters = array()) {
         return $this->get('/2/events', $parameters)->results;
     } 
+
+    $meetup = new Meetup(array(
+        'key' => $config['key']
+    ));
+
+
+    $response = $meetup->getEvents(array(
+        'group_urlname' => 'Women-Who-Code-Raleigh-Durham'
+    ));
 
 # Run a local php webserver
 
